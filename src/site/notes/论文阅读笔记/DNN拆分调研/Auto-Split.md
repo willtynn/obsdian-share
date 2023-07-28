@@ -44,6 +44,9 @@ $$\begin{aligned}
 激活向量内存开销：$\mathcal{M}^{a}=\max_{i=1,...,n}(s_{i}^{a}\times{b}_{i}^{a})$
 $${\cal M}^{w}+{\cal M}^{a}\leq M$$
 #### Error constraint
+使用方误差函数进行衡量
+权重误差：${\cal D}_{i}^{w}=MSE(w_{i}(16),w_{i}(\mathbf{b}_{i}^{w}))$
+激活误差：${\cal D}_{i}^{a}=MSE(a_{i}(16),a_{i}(\mathbf{b}_{i}^{a}))$
 $$\sum_{i=1}^{n}(\mathcal{D}_{i}^{w}+\mathcal{D}_{i}^{a})\leq E.$$
 #### Formulation
 $$\begin{gathered}\min_{\mathbf{b}^w,\mathbf{b}^a\in\mathbb{B}^n,n}\left(\sum_{i=1}^n\mathcal{L}_i^{edge}+\mathcal{L}_n^{tr}-\sum_{i=1}^n\mathcal{L}_i^{cloud}\right)\\\mathrm{s.t.}\mathcal{M}^w+\mathcal{M}^a\leq M,\\\sum_{i=1}^n(\mathcal{D}_i^w+\mathcal{D}_i^a)\leq E,\end{gathered}$$
